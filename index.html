@@ -61,28 +61,29 @@
       </div>
       
       <div class="field">
-        <label class="label is-uppercase">两步验证密钥</label>
+        <label class="label is-uppercase">你的秘钥</label>
         <div class="control">
           <input class="input" type="text" v-model="secret_key" placeholder="The secret key (in base-32 format)">
         </div>
       </div>
 
       <div class="field">
-        <label class="label is-uppercase">验证码位数</label>
+        <label class="label is-uppercase">验证码位数 GitHub默认6位</label>
         <div class="control">
           <input class="input" type="text" v-model="digits" placeholder="Usually 6">
         </div>
       </div>
 
       <div class="field">
-        <label class="label is-uppercase">验证刷新时间（秒）</label>
+        <label class="label is-uppercase">令牌周期（以秒为单位）
+</label>
         <div class="control">
           <input class="input" type="text" v-model="period" placeholder="Usually 30">
         </div>
       </div>
 
       <div class="content">
-        <span class="has-text-grey is-size-7">剩余 {{ updatingIn }} 秒刷新</span>
+        <span class="has-text-grey is-size-7"> {{ updatingIn }} 秒内更新</span>
         <progress class="progress is-info is-small" v-bind:value="updatingIn" :max="period"></progress>
       </div>
 
